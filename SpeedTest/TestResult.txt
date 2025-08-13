@@ -1,0 +1,9 @@
+   * C++ 실행 파일 (`./BS1770`):
+       * time ./BS1770 -l 2217/SBS_HD_6_05-56-0905-56-19.wav
+       * 측정된 LKFS: -22.04 LKFS
+       * 실행 시간: 0.029초
+
+   * Python 스크립트 (`pyloudnorm`):
+       * time python measure_lkfs.py 2217/SBS_HD_6_05-56-0905-56-19.wav
+       * 측정된 LKFS: -22.08 LKFS
+       * 실행 시간: 0.226초
