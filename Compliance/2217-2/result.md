@@ -48,6 +48,6 @@ All mono and stereo compliance tests are passed.
 | 1770-2_Comp_24LKFS_100Hz_2ch.wav | -24 | -23.993387910656825. |
 
 *+-0.1 tolerence  
-*Seems so far BS1770 cpp can deal with only Mono/Stereo*  
+*So far BS1770 cpp can deal with only Mono/Stereo*  
 *'Not Supported' are because of the file has more than 2 channels*  
 
