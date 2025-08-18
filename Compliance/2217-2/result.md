@@ -3,7 +3,7 @@ the latest official ITU-R BS.2217 material (14AUG2025).
 
 The Result seems is very closed to the result of De Man's [loudness.py](https://github.com/BrechtDeMan/loudness.py). 
 
-So far it has a compliance problem dealing with Absolute Gating which result I bolded.
+All mono and stereo compliance tests are passed.
 
 | File | target | Result |
 |------|--------|--------|
@@ -15,7 +15,7 @@ So far it has a compliance problem dealing with Absolute Gating which result I b
 | 1770-2_Comp_23LKFS_2000Hz_2ch.wav | -23 | -22.992263252995311. |
 | 1770-2_Comp_24LKFS_ChannelCheckCentre.wav | -24 | Not Supported |
 | 1770-2_Conf_Mono_Voice+Music-24LKFS.wav | -24 | Not Supported |
-| 1770-2_Comp_AbsGateTest.wav | -69.5 | **-71.459488600132914.** |
+| 1770-2_Comp_AbsGateTest.wav | -69.5 | -69.451290404700984. |
 | 1770-2_Comp_23LKFS_ChannelCheckRight.wav | -23 | Not Supported |
 | 1770-2_Comp_24LKFS_25Hz_2ch.wav | -24 | -23.993283512795077. |
 | 1770-2_Comp_23LKFS_10000Hz_2ch.wav | -23 | -22.993176338263382. |
