@@ -166,6 +166,34 @@ double integrated_loudness(Stereo_Wav &wav, double fs) {
     return L_KG;
 }
 
+/*===================Momentary_loudness func. Stereo overload====================*/
+//Handling PCM data directly (not wav file)
+//only suppport 48khz, 400ms (19,200 data size)
+double Momentary_loudness(vector<double> &left, vector<double>&right, double fs) {
+    /*========================data normalize & copy========================*/
+    size_t len = 19200;
+    vector<double> G = {1.0, 1.0};
+    
+    /*========================calculate z========================*/
+    double T_g = 0.4;
+    double overlap = 0.75, step = 1 - overlap;
+    double T = len / fs;
+    vector<unsigned> j_range = linspace(unsigned(0), unsigned(round((T-T_g)/(T_g*step))), round((T-T_g)/(T_g*step))+1);
+    
+    vector<double> z_left(j_range.size(), 0.0);
+    vector<double> z_right(j_range.size(), 0.0);
+    calculate_z(left, fs, len, j_range, z_left);
+    calculate_z(right, fs, len, j_range, z_right);
+    
+    // left.clear(); right.clear(); // release unused vector
+    
+    /*========================loudness========================*/
+    double l;
+    l = -0.691 + 10.0*log10(G[0]*z_left[0]+G[1]*z_right[0]);
+    
+    return l;
+}
+
 /*===================intergrated_loudness func. Mono overload====================*/
 double integrated_loudness(Mono_Wav &wav, double fs) {
     /*========================data normalize & copy========================*/
